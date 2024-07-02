@@ -1,32 +1,54 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'get_blog.css' %}">
     <title>Document</title>
 </head>
 <body>
-    <h1 class="form-title">Update Blog</h1>
+    <div class="navbar">
+        <h1 class="app-title">
+            Blogz
+        </h1>
+        <div class="app-navbar">
+            <a href="http://127.0.0.1:8000/" class="navbar-links">Home</a>
+            <a href="add" class="navbar-links">New Post</a>
+            <a href="" class="navbar-links">About</a>
+        </div>
+    </div>
+    <div class="new-blog-container">
+        <h1 class="form-title">Update Blog</h1>
     <form method="post" action="{% url 'update' blog.pk %}">
         {% csrf_token %}
+        <div class="container">
+            <div class="inputs">
+                <label for="title" class="input-label">Title</label>
+            <input type="text" id="title" name="title" required class="input-box" value="{{blog.title}}">
+            </div>
+            
+            <div class="inputs">
+                <label for="author" class="input-label">Author </label>
+            <input type="text" id="author" name="author" required class="input-box" value="{{blog.author}}">
+           
+            </div>
+             
+            <div class="inputs">
+                <label for="date" class="input-label">Date</label>
+            <input type="date" id="date" name="date" required class="input-box" value="{{ blog.date|date:'Y-m-d' }}">
+            
+            </div>
+            
+            <div class="inputs">
+                <label for="content" class="input-label">Content</label>
+                <textarea type="text" id="content" name="content" required class="content-box">{{ blog.content }}</textarea>
 
-        <label for="title" class="input-label">Title</label>
-        <input type="text" id="title" name="title" required class="input-box" value="{{blog.title}}">
-        <br><br>         
-
-        <label for="author" class="input-label">Author </label>
-        <input type="text" id="author" name="author" required class="input-box" value="{{blog.author}}">
-        <br><br>
-                
-        <label for="date" class="input-label">Date</label>
-        <input type="date" id="date" name="date" required class="input-box" value="{{ blog.date }}">
-        <br><br>
-
-        <label for="content" class="input-label">Content</label>
-        <input type="text" id="content" name="content" required class="input-box" value="{{blog.content}}">
-        <br><br>
-
-        <input type="submit" class="submit-btn" value="Update">
+            </div>
+            
+            <input type="submit" class="submit-btn" value="Update">
+        </div>
     </form>
+    </div>
 </body>
 </html>

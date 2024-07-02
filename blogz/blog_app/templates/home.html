@@ -1,25 +1,42 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
     <title>Home</title>
 </head>
 <body>
-    <h1>
-        Blogz
-    </h1>
-    <a href="home">Home</a>
-    <a href="add">New Post</a><br><br>
-    {% for blog in blogdata %}
-        <h3>
-            {{ blog.title }}
-        </h3>
-        <p>{{ blog.author }}</p>
-        <p>{{ blog.date }}</p>
-        <p>{{ blog.content }}</p>
-        <a href="{% url 'delete' blog.pk %}">Delete</a>
-        <a href="{% url 'getbloginfo' blog.pk %}">Update</a>
-    {% endfor %}
+    <div class="navbar">
+        <h1 class="app-title">
+            Blogz
+        </h1>
+        <div class="app-navbar">
+            <a href="" class="navbar-links">Home</a>
+            <a href="add" class="navbar-links">New Post</a>
+            <a href="" class="navbar-links">About</a>
+        </div>
+    </div>
+    <div class="container">
+        {% for blog in blogdata %}
+            <div class="blog-card">
+                <div class="header">
+                    <div class="blog-header">
+                        <div class="blog-title">
+                            <p style="margin: 0px;">{{ blog.title }}</p>
+                        </div>
+                        <p class="blog-author">By : {{ blog.author }}</p>
+                    </div>
+                    <p style="padding-top: 10px;">{{ blog.date }}</p>
+                </div>
+                <p class="blog-content">{{ blog.content }}</p>
+                <div class="blog-buttons">
+                    <a href="{% url 'delete' blog.pk %}" class="blog-button">Delete</a>
+                    <a href="{% url 'getbloginfo' blog.pk %}" class="blog-button">Update</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 </html>

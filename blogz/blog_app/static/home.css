@@ -1,0 +1,83 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(228, 228, 228);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    align-items: center;
+}
+
+.app-title{
+    margin-left: 20px;
+    color: white;
+}
+
+.navbar-links{
+    color: white;
+    text-decoration: none;
+    margin-right: 80px;
+}
+
+.blog-card{
+    background-color: white;
+    width: 900px;
+    padding-inline: 30px;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.blog-title{
+    margin-top: 20px;
+    font-size: 40px;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.blog-author{
+    padding-left: 25px;
+    padding-top: 25px;
+    font-size: 17px;
+    margin: 0px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-content{
+    padding: 20px;
+    font-size: 20px;
+}
+
+.blog-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.blog-button{
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin-right: 20px;
+    font-size: 12px;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
