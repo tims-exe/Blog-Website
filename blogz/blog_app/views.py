@@ -42,7 +42,7 @@ def get_blog_info(request, blog_id):
     data = {
         'blog': blogs
     }
-    for data in blogs:
+    
     return render(request, 'get_blog_info.html', context=data)
     
     
