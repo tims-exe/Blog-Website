@@ -6,6 +6,20 @@
     <title>Home</title>
 </head>
 <body>
-    Home Page
+    <h1>
+        Blogz
+    </h1>
+    <a href="home">Home</a>
+    <a href="add">New Post</a><br><br>
+    {% for blog in blogdata %}
+        <h3>
+            {{ blog.title }}
+        </h3>
+        <p>{{ blog.author }}</p>
+        <p>{{ blog.date }}</p>
+        <p>{{ blog.content }}</p>
+        <a href="{% url 'delete' blog.pk %}">Delete</a>
+        <a href="{% url 'getbloginfo' blog.pk %}">Update</a>
+    {% endfor %}
 </body>
 </html>

@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Blog(models.Model):
-    name = models.CharField(max_length=20)
+    title = models.CharField(max_length=20)
     author = models.CharField(max_length=50)
-    date = models.CharField(max_length=20)
+    date = models.DateField()
     content = models.CharField(max_length=1000)
